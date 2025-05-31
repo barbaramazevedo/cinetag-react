@@ -56,7 +56,7 @@ Access in the browser: http://localhost:3000
 
 ## 📸 Screenshots
 
-![Cinetag App](.cinetag/public/Readme/home.png) 
+![Cinetag App](assets/home.png)
 
 ##  ✨ Credits
 Project developed for educational purposes as part of the study of React.
