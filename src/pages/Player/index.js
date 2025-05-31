@@ -1,15 +1,21 @@
 import { useParams } from 'react-router-dom';
 import Banner from '../../components/Banner';
 import Title from '../../components/Title';
-import videos from '../../json/db.json';
 import styles from './Player.module.css';
 import NotFound from '../NotFound';
+import { useEffect, useState } from 'react';
 
 function Player() {
+    const [video, setVideo] = useState();
     const parameters = useParams();
-    const video = videos.find((video) => {
-        return video.id === Number(parameters.id);
-    })
+
+    useEffect(() => {
+        fetch(`https://my-json-server.typicode.com/barbaramazevedo/db-cinetag/videos?id=${parameters.id}`)
+        .then(response => response.json())
+            .then(data => {
+            setVideo(...data)
+        })
+    }, [])
 
     if (!video) {
         return <NotFound />
