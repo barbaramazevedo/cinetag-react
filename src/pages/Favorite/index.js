@@ -2,8 +2,11 @@ import styles from './Favorite.module.css'
 import Banner from '../../components/Banner';
 import Title from '../../components/Title';
 import Card from '../../components/Card';
+import { useFavoriteContext } from '../../contexts/favorites';
 
 function Favorite() {
+    const { favorite } = useFavoriteContext();
+
     return (
         <>
             <Banner image="Fav"/>
@@ -11,8 +14,10 @@ function Favorite() {
                 <h1>My Favorites</h1>
             </Title>
             <section className={styles.container}>
-                <Card id='1' titulo='Gato bonifácio' capa='https://thecatapi.com/api/images/get?format=src&type=png' />
-            </ section>    
+                { favorite.map((fav) => {
+                    return <Card {...fav} key={fav.id} />
+                })}
+            </section>    
         </>
     )
 }
