@@ -6,13 +6,13 @@ import Card from '../../components/Card';
 function Favorite() {
     return (
         <>
-        <Banner image="Fav"/>
+            <Banner image="Fav"/>
             <Title>
                 <h1>My Favorites</h1>
             </Title>
-                <section className={styles.container}>
-                    <Card id='1' titulo='Gato bonifácio' capa='https://thecatapi.com/api/images/get?format=src&type=png' />
-                </ section>    
+            <section className={styles.container}>
+                <Card id='1' titulo='Gato bonifácio' capa='https://thecatapi.com/api/images/get?format=src&type=png' />
+            </ section>    
         </>
     )
 }
